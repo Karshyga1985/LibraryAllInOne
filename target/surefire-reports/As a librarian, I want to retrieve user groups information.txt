@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: As a librarian, I want to retrieve user groups information
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.486 s <<< FAILURE! - in As a librarian, I want to retrieve user groups information
+As a librarian, I want to retrieve user groups information.Retrieve user groups information from the API endpoint  Time elapsed: 0.486 s  <<< FAILURE!
+java.lang.AssertionError: expected:<[{id=1, group_name=Admin}, {id=2, group_name=Librarian}, {id=3, group_name=Students}]> but was:<[{id=2, name=Librarian}, {id=3, name=Students}]>
+

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>14 May 2024, 12:36</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.accept_header_is(java.lang.String)</td>
+              <td>26</td>
+              <td class="duration" data-value="396069">0.000</td>
+              <td class="duration" data-value="396069">0.001</td>
+              <td class="duration" data-value="10297800">0.010</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.apiResponseShouldMatchWithUI()</td>
+              <td>1</td>
+              <td class="duration" data-value="864470900">0.864</td>
+              <td class="duration" data-value="864470900">0.864</td>
+              <td class="duration" data-value="864470900">0.864</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.createdUserInformationShouldMatchWithDatabase()</td>
+              <td>1</td>
+              <td class="duration" data-value="107334700">0.107</td>
+              <td class="duration" data-value="107334700">0.107</td>
+              <td class="duration" data-value="107334700">0.107</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.createdUserNameShouldAppearInDashboardPage()</td>
+              <td>1</td>
+              <td class="duration" data-value="5030777500">5.030</td>
+              <td class="duration" data-value="5030777500">5.030</td>
+              <td class="duration" data-value="5030777500">5.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.createdUserShouldBeAbleToLoginLibraryUI()</td>
+              <td>1</td>
+              <td class="duration" data-value="5671479200">5.671</td>
+              <td class="duration" data-value="5671479200">5.671</td>
+              <td class="duration" data-value="5671479200">5.671</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.each_field_should_not_be_null(java.lang.String)</td>
+              <td>7</td>
+              <td class="duration" data-value="89174800">0.089</td>
+              <td class="duration" data-value="89174800">0.372</td>
+              <td class="duration" data-value="624223600">0.624</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.fieldShouldBeSameWithPathParam(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="43655100">0.043</td>
+              <td class="duration" data-value="43655100">0.043</td>
+              <td class="duration" data-value="43655100">0.043</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.fieldShouldBeSameWithPathParamValues(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="15198816">0.015</td>
+              <td class="duration" data-value="15198816">0.026</td>
+              <td class="duration" data-value="91192900">0.091</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.fieldShouldNotBeNull(java.lang.String)</td>
+              <td>12</td>
+              <td class="duration" data-value="12086933">0.012</td>
+              <td class="duration" data-value="12086933">0.017</td>
+              <td class="duration" data-value="145043200">0.145</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.followingFieldsShouldNotBeNull(java.util.List&lt;java.lang.String&gt;)</td>
+              <td>7</td>
+              <td class="duration" data-value="131583942">0.131</td>
+              <td class="duration" data-value="131583942">0.270</td>
+              <td class="duration" data-value="921087600">0.921</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.iCreateARandomAsRequestBody(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="110464800">0.110</td>
+              <td class="duration" data-value="110464800">0.150</td>
+              <td class="duration" data-value="441859200">0.441</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.iLoggedLibraryApiWithCredentialsAnd(java.lang.String,java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="156791800">0.156</td>
+              <td class="duration" data-value="156791800">0.192</td>
+              <td class="duration" data-value="627167200">0.627</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.iProvideAsAndAsAsARequestBody(java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="334933">0.000</td>
+              <td class="duration" data-value="334933">0.001</td>
+              <td class="duration" data-value="1004800">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.iProvideBorrow_idAsARequestBody(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.iSendDELETERequestToEndpoint(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="151503700">0.151</td>
+              <td class="duration" data-value="151503700">0.162</td>
+              <td class="duration" data-value="303007400">0.303</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.iSendPOSTRequestToEndpoint(java.lang.String)</td>
+              <td>12</td>
+              <td class="duration" data-value="150594108">0.150</td>
+              <td class="duration" data-value="150594108">0.251</td>
+              <td class="duration" data-value="1807129300">1.807</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.iSendTokenInformationAsRequestBody()</td>
+              <td>4</td>
+              <td class="duration" data-value="249875">0.000</td>
+              <td class="duration" data-value="249875">0.000</td>
+              <td class="duration" data-value="999500">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.i_logged_library_api_as_a(java.lang.String)</td>
+              <td>22</td>
+              <td class="duration" data-value="909908845">0.909</td>
+              <td class="duration" data-value="909908845">2.188</td>
+              <td class="duration" data-value="20017994600">20.017</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.i_send_get_request_to_endpoint(java.lang.String)</td>
+              <td>12</td>
+              <td class="duration" data-value="484216908">0.484</td>
+              <td class="duration" data-value="484216908">2.281</td>
+              <td class="duration" data-value="5810602900">5.810</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.pathParamIs(java.lang.String,java.lang.String)</td>
+              <td>9</td>
+              <td class="duration" data-value="163655">0.000</td>
+              <td class="duration" data-value="163655">0.001</td>
+              <td class="duration" data-value="1472900">0.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.requestContentTypeHeaderIs(java.lang.String)</td>
+              <td>8</td>
+              <td class="duration" data-value="309187">0.000</td>
+              <td class="duration" data-value="309187">0.001</td>
+              <td class="duration" data-value="2473500">0.002</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.response_content_type_is(java.lang.String)</td>
+              <td>26</td>
+              <td class="duration" data-value="945715">0.000</td>
+              <td class="duration" data-value="945715">0.004</td>
+              <td class="duration" data-value="24588600">0.024</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.shouldMatchWithDBRecordAndIs_returnedShouldBe(java.lang.String,java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="15351066">0.015</td>
+              <td class="duration" data-value="15351066">0.019</td>
+              <td class="duration" data-value="46053200">0.046</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.status_code_should_be(java.lang.Integer)</td>
+              <td>26</td>
+              <td class="duration" data-value="1062846">0.001</td>
+              <td class="duration" data-value="1062846">0.014</td>
+              <td class="duration" data-value="27634000">0.027</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.theFieldValueForPathShouldBeEqualTo(java.lang.String,java.lang.String)</td>
+              <td>18</td>
+              <td class="duration" data-value="12433572">0.012</td>
+              <td class="duration" data-value="12433572">0.018</td>
+              <td class="duration" data-value="223804300">0.223</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.uiDatabaseAndAPIBookCategoriesInformationMustMatch()</td>
+              <td>1</td>
+              <td class="duration" data-value="1627156300">1.627</td>
+              <td class="duration" data-value="1627156300">1.627</td>
+              <td class="duration" data-value="1627156300">1.627</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.uiDatabaseAndAPICreatedBookInformationMustMatch()</td>
+              <td>1</td>
+              <td class="duration" data-value="46794700">0.046</td>
+              <td class="duration" data-value="46794700">0.046</td>
+              <td class="duration" data-value="46794700">0.046</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.APIStepDefs.userGroupsAPIResponseShouldMatchWithDatabase()</td>
+              <td>1</td>
+              <td class="duration" data-value="13605600">0.013</td>
+              <td class="duration" data-value="13605600">0.013</td>
+              <td class="duration" data-value="13605600">0.013</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.Hooks.setUp()</td>
+              <td>4</td>
+              <td class="duration" data-value="3548201550">3.548</td>
+              <td class="duration" data-value="3548201550">4.377</td>
+              <td class="duration" data-value="14192806200">14.192</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.Hooks.setUpDB()</td>
+              <td>7</td>
+              <td class="duration" data-value="323997814">0.323</td>
+              <td class="duration" data-value="323997814">0.644</td>
+              <td class="duration" data-value="2267984700">2.267</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.Hooks.tearDown(io.cucumber.java.Scenario)</td>
+              <td>4</td>
+              <td class="duration" data-value="941858800">0.941</td>
+              <td class="duration" data-value="941858800">2.938</td>
+              <td class="duration" data-value="3767435200">3.767</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.Hooks.tearDownDB()</td>
+              <td>7</td>
+              <td class="duration" data-value="588971">0.000</td>
+              <td class="duration" data-value="588971">0.001</td>
+              <td class="duration" data-value="4122800">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.UIStepDefs.i_logged_in_library_ui_as(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="3364038600">3.364</td>
+              <td class="duration" data-value="3364038600">3.456</td>
+              <td class="duration" data-value="6728077200">6.728</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.library.steps.UIStepDefs.i_navigate_to_page(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="3084700650">3.084</td>
+              <td class="duration" data-value="3084700650">3.084</td>
+              <td class="duration" data-value="6169401300">6.169</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>34</td>
+            <td>246</td>
+            <td class="duration">0.315</td>
+            <td class="duration">20.017</td>
+            <td class="duration">1:17.662</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

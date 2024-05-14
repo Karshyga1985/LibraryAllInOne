@@ -17,7 +17,6 @@ public abstract  class BasePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
     @FindBy(tagName = "h3")
     public WebElement pageHeader;
 
@@ -25,7 +24,7 @@ public abstract  class BasePage {
     public WebElement accountHolderName;
 
     @FindBy(linkText = "Log Out")
-    public WebElement logOutLink;
+    private WebElement logOutLink;
 
     public void logOut(){
         accountHolderName.click();

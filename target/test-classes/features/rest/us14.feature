@@ -1,0 +1,11 @@
+@smoke
+Feature: As a librarian, I want to retrieve dashboard stats
+
+  @us14 @ui
+  Scenario: Retrieve dashboard stats from the API endpoint
+    Given I logged Library api as a "librarian"
+    And Accept header is "application/json"
+    When I send GET request to "/dashboard_stats" endpoint
+    Then status code should be 200
+    And Response Content type is "application/json; charset=utf-8"
+    And API response should match with UI

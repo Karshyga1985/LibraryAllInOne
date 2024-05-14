@@ -43,10 +43,23 @@ public class BookPage extends BasePage {
     @FindBy(id = "book_group_id")
     public WebElement categoryDropdown;
 
-
     @FindBy(id = "description")
     public WebElement description;
 
+    @FindBy(xpath = "(//table[@id = 'tbl_books']//td)[2]")
+    public WebElement savedBookISBN;
+
+    @FindBy(xpath = "(//table[@id = 'tbl_books']//td)[3]")
+    public WebElement savedBookName;
+
+    @FindBy(xpath = "(//table[@id = 'tbl_books']//td)[4]")
+    public WebElement savedBookAuthor;
+
+    @FindBy(xpath = "(//table[@id = 'tbl_books']//td)[5]")
+    public WebElement savedBookCategory;
+
+    @FindBy(xpath = "(//table[@id = 'tbl_books']//td)[6]")
+    public WebElement savedBookYear;
 
     public WebElement editBook(String book) {
         String xpath = "//td[3][.='" + book + "']/../td/a";

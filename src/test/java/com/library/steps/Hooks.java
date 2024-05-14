@@ -22,7 +22,6 @@ public class Hooks {
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Driver.getDriver().get(ConfigurationReader.getProperty("library_url"));
-
     }
 
     @After("@ui")
@@ -31,9 +30,7 @@ public class Hooks {
             final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png","screenshot");
         }
-
         Driver.closeDriver();
-
     }
 
     @Before("@db")

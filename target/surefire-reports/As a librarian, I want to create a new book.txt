@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: As a librarian, I want to create a new book
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 19.317 s <<< FAILURE! - in As a librarian, I want to create a new book
+As a librarian, I want to create a new book.Create a new book all layers  Time elapsed: 16.693 s  <<< FAILURE!
+java.lang.AssertionError: expected:<{name=Brandy of the Damned8, isbn=0400665654, year=1919, author=Elvis Daniel, book_category_id=3, description=Chuck Norris doesn't need garbage collection because he doesn't call .Dispose(), he calls .DropKick().}> but was:<{name=Brandy of the Damned8, isbn=0400665654, year=1919, author=Elvis Daniel, book_category_id=3}>
+

@@ -12,20 +12,16 @@ import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
-
-
     // Creating a private constructor, we are closing access to the
     // object of this class from outside the class
     private Driver() {
     }
-
     // We make WebDriver private, because we want to close access from outside of class
     // We make it static, because we will use it inside static method
     //
     //private static WebDriver driver; // value is null by default
 
     private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
-
 
     // Create a re-usable utility method which will return same driver instance when we call it
     public static WebDriver getDriver() {
@@ -34,8 +30,6 @@ public class Driver {
         // if you already setup driver and using it again for following line of codes, it will return to same driver
         if (driverPool.get() == null) {
             String browserName = System.getProperty("browser") != null ? browserName = System.getProperty("browser") : ConfigurationReader.getProperty("browser");
-
-
 
             switch(browserName){
                 case "remote-chrome":
@@ -47,7 +41,6 @@ public class Driver {
                         desiredCapabilities.setBrowserName("chrome");
                         driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
                         //driverPool.set(new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"),desiredCapabilities));
-
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -67,11 +60,11 @@ public class Driver {
                     }
                     break;
                 case "chrome":
-                    WebDriverManager.chromedriver().setup();
+                    //WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver());
                     break;
                 case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
+                    //WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
                     break;
             }
